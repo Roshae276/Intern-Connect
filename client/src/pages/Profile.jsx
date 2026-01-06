@@ -80,7 +80,7 @@ const Profile = () => {
         }
       };
 
-      const res = await fetch("http://localhost:5000/api/auth/profile", {
+      const res = await fetch("https://intern-connect-india.onrender.com/api/auth/profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -116,7 +116,7 @@ const Profile = () => {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://localhost:5000/api/upload", { method: "POST", body: formData });
+      const res = await fetch("https://intern-connect-india.onrender.com/api/upload", { method: "POST", body: formData });
       const data = await res.json();
       
       const newUserState = { ...user, avatar: data.url };
@@ -142,7 +142,7 @@ const Profile = () => {
       // 1. Upload to store file (Still needed for internal reference)
       const uploadFormData = new FormData();
       uploadFormData.append("file", file);
-      const uploadRes = await fetch("http://localhost:5000/api/upload", { method: "POST", body: uploadFormData });
+      const uploadRes = await fetch("https://intern-connect-india.onrender.com/api/upload", { method: "POST", body: uploadFormData });
       const uploadData = await uploadRes.json();
       const cloudUrl = uploadData.url;
 
@@ -151,7 +151,7 @@ const Profile = () => {
       try {
           const analyzeFormData = new FormData();
           analyzeFormData.append("resume", file);
-          const analyzeRes = await fetch("http://localhost:5000/api/resume/analyze", { method: "POST", body: analyzeFormData });
+          const analyzeRes = await fetch("https://intern-connect-india.onrender.com/api/resume/analyze", { method: "POST", body: analyzeFormData });
           if (analyzeRes.ok) {
               const analyzeData = await analyzeRes.json();
               if (Array.isArray(analyzeData.skills)) {

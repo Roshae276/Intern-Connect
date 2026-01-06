@@ -24,7 +24,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchInternships = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/internships");
+       const response = await fetch("https://intern-connect-india.onrender.com/api/internships");
         if (!response.ok) throw new Error(`Server Error: ${response.status}`);
         
         const data = await response.json();
