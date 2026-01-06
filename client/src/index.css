@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+/* 2. BASE STYLES */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* 3. SMOOTH TRANSITION FOR THEME SWITCH */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 4. HIDE SCROLLBAR (Optional but looks clean) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569; 
+}
+/* GOOGLE TRANSLATE CUSTOM STYLING */
+
+/* Hide the annoying "Original Text" tooltip on hover */
+.goog-te-gadget-simple {
+  background-color: #f3f4f6 !important; /* gray-100 */
+  border: 1px solid #e5e7eb !important; /* gray-200 */
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  transition: all 0.2s;
+}
+
+.goog-te-gadget-simple:hover {
+  background-color: #e5e7eb !important; /* gray-200 */
+}
+
+/* Hide the Google Logo to make it look native */
+.goog-te-gadget-icon {
+  display: none !important;
+}
+
+/* Fix text alignment */
+.goog-te-menu-value {
+  color: #374151 !important; /* gray-700 */
+  margin: 0 !important;
+}
+
+.goog-te-menu-value span {
+  color: #374151 !important;
+  font-weight: 500 !important;
+  border-left: none !important;
+}
+
+/* Hide the massive "Suggest an edit" top bar */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* --- STANDARD GOOGLE TRANSLATE --- */
+
+/* 1. RESET: Allow standard text and logo to show */
+.goog-te-gadget {
+  font-family: inherit !important;
+  font-size: 11px !important;   /* Standard small text size */
+  color: #6b7280 !important;    /* Gray-500 text */
+  margin-top: 2px;
+}
+
+/* 2. Style the Dropdown slightly to align it */
+.goog-te-gadget .goog-te-combo {
+  margin: 0 0 0 4px !important; /* Small gap between text and box */
+  padding: 4px 8px !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  color: #374151 !important;
+  background-color: white !important;
+  outline: none !important;
+  vertical-align: middle !important;
+}
+
+/* 3. Hide the Top Banner (keep this hidden, it breaks layouts) */
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+
+/* 4. DARK MODE FIXES */
+/* In dark mode, make the "Powered by Google" text readable */
+.dark .goog-te-gadget {
+  color: #d1d5db !important; /* Light Gray */
+}
+
+/* In dark mode, invert the dropdown colors */
+.dark .goog-te-gadget .goog-te-combo {
+  background-color: #374151 !important;
+  color: white !important;
+  border-color: #4b5563 !important;
+}
+
